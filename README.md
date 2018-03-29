@@ -10,7 +10,7 @@ dotnet run
 
 create docker file
 
-
+```
 FROM microsoft/aspnetcore-build:2.0 AS build-env
 WORKDIR /app
 
@@ -27,6 +27,7 @@ FROM microsoft/aspnetcore:2.0
 WORKDIR /app
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "API.dll"]
+```
 
 docker build -t api .
 
